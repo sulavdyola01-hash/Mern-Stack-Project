@@ -303,9 +303,9 @@ Important rules:
 - The root `.gitignore` and `server/.gitignore` both ignore `.env`.
 - Do not put real database passwords in the README, source code, or screenshots.
 
-The frontend reads its API URL from `VITE_API_URL` in `client/.env`. Locally use
-`http://localhost:5000/api/contact`; behind the EC2 nginx config use
-`/api/v1/contact`.
+The frontend reads `NEXT_PUBLIC_API_URL` as the local API base (for example
+`http://localhost:5000/api/v1`) and appends `/contact`. `VITE_API_URL` keeps the
+production nginx path `/api/v1/contact`; a localhost base is ignored in production.
 
 ## 11. How to Start the Frontend
 
@@ -483,6 +483,7 @@ Any unknown URL redirects to the Home page.
 | GET | `/` | Health check. Returns a short text message. |
 | POST | `/contact` | Nginx `/api/v1/contact` maps to this route. |
 | POST | `/api/contact` | Direct local/testing route. |
+| POST | `/api/v1/contact` | Direct base-URL route. |
 
 ### POST /api/contact
 

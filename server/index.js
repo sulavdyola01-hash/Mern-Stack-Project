@@ -19,6 +19,7 @@ app.get('/', (req, res) => {
 // API routes
 app.use('/contact', contactRoutes)
 app.use('/api/contact', contactRoutes)
+app.use('/api/v1/contact', contactRoutes)
 
 // Connect to MongoDB, then start the server
 connectDB().then(() => {

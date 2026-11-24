@@ -2,7 +2,18 @@ import { useState } from 'react'
 import SectionHeader from '../components/SectionHeader'
 import '../styles/contactuspage.css'
 
-const API_URL = import.meta.env.VITE_API_URL || '/api/v1/contact'
+function resolveApiUrl() {
+  const baseUrl = (import.meta.env.NEXT_PUBLIC_API_URL || '').replace(/\/$/, '')
+  const fallback = import.meta.env.VITE_API_URL || '/api/v1/contact'
+
+  if (!baseUrl || (import.meta.env.PROD && baseUrl.includes('localhost'))) {
+    return fallback
+  }
+
+  return `${baseUrl}/contact`
+}
+
+const API_URL = resolveApiUrl()
 
 const initialForm = {
   firstName: '',
