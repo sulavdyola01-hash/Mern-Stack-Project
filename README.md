@@ -303,9 +303,9 @@ Important rules:
 - The root `.gitignore` and `server/.gitignore` both ignore `.env`.
 - Do not put real database passwords in the README, source code, or screenshots.
 
-The frontend currently expects the backend at `http://localhost:5000`. If you
-change `PORT`, also update the `API_URL` constant in
-`client/src/pages/Contact.jsx`.
+The frontend reads its API URL from `VITE_API_URL` in `client/.env`. Locally use
+`http://localhost:5000/api/contact`; behind the EC2 nginx config use
+`/api/v1/contact`.
 
 ## 11. How to Start the Frontend
 
@@ -316,10 +316,10 @@ cd client
 npm run dev
 ```
 
-Vite starts the development server and prints a URL, usually:
+Vite starts the development server on port 3000:
 
 ```
-http://localhost:5173
+http://localhost:3000
 ```
 
 Open that URL in a browser. Other frontend commands:
@@ -386,7 +386,7 @@ The Contact page is in `client/src/pages/Contact.jsx`.
    to `Sending...`. Then it calls `fetch()`:
 
    ```js
-   fetch('http://localhost:5000/api/contact', {
+   fetch(import.meta.env.VITE_API_URL, {
      method: 'POST',
      headers: { 'Content-Type': 'application/json' },
      body: JSON.stringify(formData),
@@ -481,7 +481,8 @@ Any unknown URL redirects to the Home page.
 | Method | Endpoint | Purpose |
 |--------|----------|---------|
 | GET | `/` | Health check. Returns a short text message. |
-| POST | `/api/contact` | Validates and saves a contact message. |
+| POST | `/contact` | Nginx `/api/v1/contact` maps to this route. |
+| POST | `/api/contact` | Direct local/testing route. |
 
 ### POST /api/contact
 
@@ -551,8 +552,8 @@ from inside the `server` folder.
 ### `EADDRINUSE: address already in use :::5000`
 
 Another backend is already running on port 5000. Stop the other process, or
-change `PORT` in `server/.env` and update `API_URL` in
-`client/src/pages/Contact.jsx` to match.
+change `PORT` in `server/.env` and update `VITE_API_URL` in
+`client/.env` to match.
 
 ### The Contact form shows the error message
 
@@ -620,7 +621,7 @@ npm run dev
 Open:
 
 ```
-http://localhost:5173
+http://localhost:3000
 ```
 
 Other useful commands:
@@ -775,9 +776,9 @@ be saved even if someone bypasses the browser.
 
 ### 25. Why is CORS needed?
 
-The frontend runs on port 5173 and the backend on port 5000. Browsers treat
-different ports as different origins, so `cors()` allows the frontend to call the
-backend.
+Locally the frontend runs on port 3000 and the backend on port 5000, so `cors()`
+allows the cross-origin call. On EC2, nginx puts both under one origin and proxies
+`/api/v1/` to the backend.
 
 ### 26. Why are environment variables used?
 

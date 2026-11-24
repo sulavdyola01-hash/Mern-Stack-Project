@@ -2,7 +2,7 @@ import { useState } from 'react'
 import SectionHeader from '../components/SectionHeader'
 import '../styles/contactuspage.css'
 
-const API_URL = 'http://localhost:5000/api/contact'
+const API_URL = import.meta.env.VITE_API_URL || '/api/v1/contact'
 
 const initialForm = {
   firstName: '',
