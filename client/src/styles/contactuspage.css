@@ -1,0 +1,230 @@
+/* Main Content */
+.page-contact {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* Page Title Section */
+.page-contact .page-title-section {
+  padding: 40px 190px 20px;
+}
+
+/* Section Header with Dividers */
+.page-contact .section-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 45px;
+  margin: 0;
+}
+
+.page-contact .section-header h2 {
+  font-family: "Abel", sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  color: #000;
+  margin: 0;
+  white-space: nowrap;
+  -webkit-text-stroke: 1px #000000;
+}
+
+.page-contact .divider-line {
+  flex: 1;
+  height: 2px;
+  background-color: #000;
+  max-width: 640px;
+}
+
+/* Contact Form Section */
+.page-contact .contact-form-section {
+  padding: 40px 190px 80px;
+}
+
+.page-contact .form-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #e8e8e8;
+  padding: 50px 60px;
+  border-radius: 8px;
+}
+
+.page-contact .form-heading {
+  font-family: "Abel", sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+  color: #000;
+  margin-bottom: 40px;
+}
+
+.page-contact .contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.page-contact .form-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.page-contact .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.page-contact .form-group label {
+  font-family: "Abel", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #000;
+}
+
+.page-contact .form-group input,
+.page-contact .form-group textarea {
+  padding: 12px 15px;
+  border: none;
+  background-color: #d4d4d4;
+  border-radius: 4px;
+  font-family: "Abel", sans-serif;
+  font-size: 14px;
+  color: #000;
+  outline: none;
+}
+
+.page-contact .form-group input:focus,
+.page-contact .form-group textarea:focus {
+  background-color: #c9c9c9;
+}
+
+.page-contact .form-subject {
+  max-width: 400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.page-contact .form-message {
+  width: 100%;
+}
+
+.page-contact .form-message textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.page-contact .form-submit {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.page-contact .submit-btn {
+  background-color: #d4d4d4;
+  color: #000;
+  border: none;
+  padding: 12px 40px;
+  font-family: "Abel", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.page-contact .submit-btn:hover {
+  background-color: #c0c0c0;
+}
+
+.page-contact .form-feedback {
+  font-family: "Abel", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.page-contact .form-feedback.success {
+  color: #1b6e2f;
+}
+
+.page-contact .form-feedback.error {
+  color: #b3261e;
+}
+
+.page-contact .submit-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.page-contact .submit-btn:disabled:hover {
+  background-color: #d4d4d4;
+}
+
+/* Responsive Design */
+@media (max-width: 1600px) {
+  .page-contact .page-title-section,
+  .page-contact .contact-form-section {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .page-contact .page-title-section,
+  .page-contact .contact-form-section {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .page-contact .divider-line {
+    max-width: 400px;
+  }
+
+  .page-contact .form-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .page-contact .section-header h2 {
+    font-size: 24px;
+  }
+
+  .page-contact .form-container {
+    padding: 30px 25px;
+  }
+
+  .page-contact .form-heading {
+    font-size: 22px;
+    margin-bottom: 30px;
+  }
+
+  .page-contact .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-contact .page-title-section,
+  .page-contact .contact-form-section {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .page-contact .section-header {
+    gap: 15px;
+  }
+
+  .page-contact .section-header h2 {
+    font-size: 20px;
+  }
+
+  .page-contact .form-container {
+    padding: 20px 15px;
+  }
+
+  .page-contact .submit-btn {
+    width: 100%;
+  }
+}

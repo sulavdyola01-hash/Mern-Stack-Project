@@ -1,0 +1,187 @@
+/* Main Content */
+.page-guitars {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* Page Title Section */
+.page-guitars .page-title-section {
+  padding: 40px 190px 20px;
+}
+
+/* Section Header with Dividers */
+.page-guitars .section-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 45px;
+  margin: 0;
+}
+
+.page-guitars .section-header h2 {
+  font-family: "Abel", sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  color: #000;
+  margin: 0;
+  white-space: nowrap;
+  -webkit-text-stroke: 1px #000000;
+}
+
+.page-guitars .divider-line {
+  flex: 1;
+  height: 2px;
+  background-color: #000;
+  max-width: 640px;
+}
+
+/* Brand Section */
+.page-guitars .brand-section {
+  padding: 40px 190px;
+  margin-bottom: 40px;
+}
+
+.page-guitars .brand-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.page-guitars .brand-logo-large {
+  height: 90px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Product Grid */
+.page-guitars .product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.page-guitars .product-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+
+.page-guitars .product-image {
+  width: 100%;
+  max-width: 180px;
+  height: 400px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+.page-guitars .product-title {
+  font-family: "Abel", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #000;
+  line-height: 1.4;
+  margin: 0;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-guitars .product-price {
+  font-family: "Abel", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #000;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1600px) {
+  .page-guitars .page-title-section,
+  .page-guitars .brand-section {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .page-guitars .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .page-guitars .page-title-section,
+  .page-guitars .brand-section {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .page-guitars .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .page-guitars .divider-line {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-guitars .page-title-section,
+  .page-guitars .brand-section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .page-guitars .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .page-guitars .brand-logo-large {
+    height: 70px;
+  }
+
+  .page-guitars .section-header h2 {
+    font-size: 24px;
+  }
+
+  .page-guitars .product-image {
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-guitars .page-title-section,
+  .page-guitars .brand-section {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .page-guitars .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-guitars .section-header {
+    gap: 15px;
+  }
+
+  .page-guitars .section-header h2 {
+    font-size: 20px;
+  }
+
+  .page-guitars .brand-logo-large {
+    height: 60px;
+  }
+
+  .page-guitars .product-image {
+    height: 250px;
+  }
+}

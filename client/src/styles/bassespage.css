@@ -1,0 +1,186 @@
+/* Main Content */
+.page-basses {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* Page Title Section */
+.page-basses .page-title-section {
+  padding: 40px 190px 20px;
+}
+
+/* Section Header with Dividers */
+.page-basses .section-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 45px;
+  margin: 0;
+}
+
+.page-basses .section-header h2 {
+  font-family: "Abel", sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  color: #000;
+  margin: 0;
+  white-space: nowrap;
+  -webkit-text-stroke: 1px #000000;
+}
+
+.page-basses .divider-line {
+  flex: 1;
+  height: 2px;
+  background-color: #000;
+  max-width: 640px;
+}
+
+/* Brand Section */
+.page-basses .brand-section {
+  padding: 40px 190px;
+  margin-bottom: 40px;
+}
+
+.page-basses .brand-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.page-basses .brand-logo-large {
+  height: 90px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Product Grid - 3 columns for bass guitars */
+.page-basses .product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+  margin-top: 40px;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page-basses .product-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+
+.page-basses .product-image {
+  width: 100%;
+  max-width: 280px;
+  height: 500px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+.page-basses .product-title {
+  font-family: "Abel", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #000;
+  line-height: 1.4;
+  margin: 0;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-basses .product-price {
+  font-family: "Abel", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #000;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1600px) {
+  .page-basses .page-title-section,
+  .page-basses .brand-section {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .page-basses .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .page-basses .page-title-section,
+  .page-basses .brand-section {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .page-basses .divider-line {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-basses .page-title-section,
+  .page-basses .brand-section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .page-basses .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .page-basses .brand-logo-large {
+    height: 70px;
+  }
+
+  .page-basses .section-header h2 {
+    font-size: 24px;
+  }
+
+  .page-basses .product-image {
+    height: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-basses .page-title-section,
+  .page-basses .brand-section {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .page-basses .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-basses .section-header {
+    gap: 15px;
+  }
+
+  .page-basses .section-header h2 {
+    font-size: 20px;
+  }
+
+  .page-basses .brand-logo-large {
+    height: 60px;
+  }
+
+  .page-basses .product-image {
+    height: 300px;
+  }
+}
